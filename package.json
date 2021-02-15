@@ -1,0 +1,14 @@
+{
+  "name": "ws-three",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ws-three.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yannick Coopman - Jonathan Deschuyteneer - Olivia Fantinel",
+  "license": "ISC",
+  "dependencies": {
+    "three": "^0.125.2"
+  }
+}
