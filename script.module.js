@@ -45,20 +45,19 @@ let init = () => {
     You also can load texture on the cube. 
     This method load the texture on every side of the cube. You can also load a different texture on each side with THREE.CubeTextureLoader().
     */
-    const texture = new THREE.TextureLoader().load( "textures/cirno.png" );
-    // const loader = new THREE.CubeTextureLoader()
-    // loader.setPath( 'textures/' );
-    // const textureCube = loader.load( [
-    //     '9.png',
-    //     '9.png',
-    //     '9.png',
-    //     '9.png',
-    //     '9.png',
-    //     '9.png'
-    // ] );
-    // scene.background = textureCube;
+    // const texture = new THREE.TextureLoader().load( "textures/cirno.png" );
+    const loader = new THREE.CubeTextureLoader()
+    loader.setPath( 'textures/' );
+    const texture = loader.load( [
+        '1.png',
+        '2.png',
+        '3.png',
+        '4.png',
+        '5.png',
+        '6.png'
+    ] );
 
-    const material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: texture } );
+    const material = new THREE.MeshBasicMaterial( { color: 0xffffff, envMap: texture } );
     
 
     /*
