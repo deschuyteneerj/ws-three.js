@@ -55,7 +55,7 @@ let init = () => {
     Right now, this cube doesn't really exist. It's just "instructions" to make a cube.
     Mesh is a method to craft the geometry figures. It uses lot of triangles polygon to make them.
     */
-    const cube = new THREE.Mesh( geometry, materials );
+    const cube = new THREE.Mesh( geometry, [materials[0], materials[5], materials[2], materials[3], materials[4], materials[1]] );
 
     /*
     Your cube exists ! But it isn't displaying anywhere...
