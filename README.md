@@ -1,2 +1,3 @@
-# ws-three.js
-Workshop three.js with Yannick Coopman, Jonathan Deschuyteneer
+# BeCode watch : three.js introduction and Hello Cube
+
+Introduction to three.js.
