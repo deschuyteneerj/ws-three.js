@@ -49,7 +49,6 @@ let init = () => {
 
 
     const materials = [...Array(6).keys()].map(x => new THREE.MeshBasicMaterial( { color: 0xffffff, map: new THREE.TextureLoader().load( `textures/${x + 1}.png` ) } ));
-    console.log(materials)
 
     /*
     Right now, this cube doesn't really exist. It's just "instructions" to make a cube.
@@ -72,27 +71,59 @@ let init = () => {
     It's pretty easy to animate this kind of figure. Don't hesitate to change the values and test the different animations.
     */
     renderer.render( scene, camera );
-    const controls = new OrbitControls( camera, canvas );
-    controls.update();
-    // let i = 0;
-    function animate() {
-        requestAnimationFrame( animate );
-        controls.update();
+    // const controls = new OrbitControls( camera, canvas );
+    // controls.update();
 
-        // i += 0.01
+    let i = 0;
+    let random1 = true;
+    let random2 = true;
+    let s = true;
+    let stop = false;
+    function animate() {
+        // controls.update();
+        i += 1
+        // console.log(i%r)
+
+
+        if ((i % 10) === 0) {
+            random1 = Math.floor(Math.random() + 1/2);
+            random2 = Math.floor(Math.random() + 1/2);
+            if (s) {stop = true;}
+
+        }
         
         // cube.rotation.x = 100 * i;
-
-        // cube.rotation.x = i;
+        if (random1) {
+            cube.rotation.x += Math.PI/20 * (random2 ? 1 : -1);
+            cube.rotation.z += Math.PI/20
+        } else {
+            cube.rotation.y += Math.PI/20 * (random2 ? 1 : -1);
+            cube.rotation.z += Math.PI/20
+        }
+        
         // cube.rotation.y = -i;
         
         // cube.rotation.x = Math.sin(i) /2;
         // cube.rotation.y = Math.cos(i) /2;
-
+        document.getElementById("debug1").innerText = cube.rotation.x;
+        document.getElementById("debug2").innerText = random1;
+        document.getElementById("debug3").innerText = random2;
         renderer.render( scene, camera );
+        if (!stop) {requestAnimationFrame( animate )};
     };
 
-    animate();
+    document.getElementById("stop").addEventListener("click", () => {
+        if (s) {
+            s = false;
+            stop = false;
+            animate();
+        } else {
+            s = true;
+        }
+        console.log(stop)
+    })
+
+
     
 
 }
