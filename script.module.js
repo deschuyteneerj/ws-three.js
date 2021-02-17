@@ -46,25 +46,16 @@ let init = () => {
     This method load the texture on every side of the cube. You can also load a different texture on each side with THREE.CubeTextureLoader().
     */
     // const texture = new THREE.TextureLoader().load( "textures/cirno.png" );
-    const loader = new THREE.CubeTextureLoader()
-    loader.setPath( 'textures/' );
-    const texture = loader.load( [
-        '1.png',
-        '2.png',
-        '3.png',
-        '4.png',
-        '5.png',
-        '6.png'
-    ] );
 
-    const material = new THREE.MeshBasicMaterial( { color: 0xffffff, envMap: texture } );
-    
+
+    const materials = [...Array(6).keys()].map(x => new THREE.MeshBasicMaterial( { color: 0xffffff, map: new THREE.TextureLoader().load( `textures/${x + 1}.png` ) } ));
+    console.log(materials)
 
     /*
     Right now, this cube doesn't really exist. It's just "instructions" to make a cube.
     Mesh is a method to craft the geometry figures. It uses lot of triangles polygon to make them.
     */
-    const cube = new THREE.Mesh( geometry, material );
+    const cube = new THREE.Mesh( geometry, materials );
 
     /*
     Your cube exists ! But it isn't displaying anywhere...
@@ -83,8 +74,6 @@ let init = () => {
     renderer.render( scene, camera );
     const controls = new OrbitControls( camera, canvas );
     controls.update();
-    cube.x = 1000;
-    cube.y = 1000;
     // let i = 0;
     function animate() {
         requestAnimationFrame( animate );
