@@ -1,4 +1,5 @@
 body{
     background-color: #FDEDF0;
-    background-image: url("./textures/9.png");
+    background-image: url("./textures/casino.jpg");
+    background-size: cover;
 } 

@@ -74,53 +74,60 @@ let init = () => {
     // const controls = new OrbitControls( camera, canvas );
     // controls.update();
 
-    let i = 0;
-    let random1 = true;
-    let random2 = true;
-    let s = true;
-    let stop = false;
+    // const axesHelper = new THREE.AxesHelper( 5 );
+    // scene.add( axesHelper );
+
+    let i = 0, randomAxis, randomDirection , stopBuffer = true, stop = true; 
     function animate() {
         // controls.update();
         i += 1
-        // console.log(i%r)
-
 
         if ((i % 10) === 0) {
-            random1 = Math.floor(Math.random() + 1/2);
-            random2 = Math.floor(Math.random() + 1/2);
-            if (s) {stop = true;}
-
+            randomAxis = Math.floor(Math.random() + 1/2);
+            randomDirection = Math.floor(Math.random() + 1/2);
+            i = 0;
+            if (stopBuffer) {
+                stop = true;
+            }
         }
         
         // cube.rotation.x = 100 * i;
-        if (random1) {
-            cube.rotation.x += Math.PI/20 * (random2 ? 1 : -1);
-            cube.rotation.z += Math.PI/20
+        if (randomAxis) {
+            cube.rotation.x += Math.PI/20 * (randomDirection ? 1 : -1);
+            // axesHelper.rotation.x += Math.PI/20 * (randomDirection ? 1 : -1);
         } else {
-            cube.rotation.y += Math.PI/20 * (random2 ? 1 : -1);
-            cube.rotation.z += Math.PI/20
+            cube.rotation.y += Math.PI/20
+            // axesHelper.rotation.y += Math.PI/20 * (randomDirection ? 1 : -1);
         }
+        cube.rotation.z += Math.PI/20
+        // axesHelper.rotation.z += Math.PI/20
         
         // cube.rotation.y = -i;
         
         // cube.rotation.x = Math.sin(i) /2;
         // cube.rotation.y = Math.cos(i) /2;
-        document.getElementById("debug1").innerText = cube.rotation.x;
-        document.getElementById("debug2").innerText = random1;
-        document.getElementById("debug3").innerText = random2;
-        renderer.render( scene, camera );
-        if (!stop) {requestAnimationFrame( animate )};
+            renderer.render( scene, camera );
+        if (!stop) {requestAnimationFrame(animate)};
     };
 
+    function rollDice() {
+        stopBuffer = false;
+        stop = false;
+        animate();
+    }
+
+    function stopDice() {
+        stopBuffer = true;
+    }
+
     document.getElementById("stop").addEventListener("click", () => {
-        if (s) {
-            s = false;
-            stop = false;
-            animate();
+        if (stop) {
+            rollDice();
         } else {
-            s = true;
+            setTimeout(stopDice, 3000);
         }
-        console.log(stop)
+
+        
     })
 
 
