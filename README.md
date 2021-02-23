@@ -14,6 +14,8 @@ Three.js is a powerful tool that makes use of WebGL to render 3D computer animat
 
 2. Do the following commands in your project folder : `npm init` and `npm install three`. If done correctly, you should have a package.json and a package-lock.json files, as well as a node_modules folder.
 
+3. If you can, clone this repo somewhere else (as a backup) and copy the textures folder into yours.
+
 ## Sources
 
 (threejs.org)[https://threejs.org/]
