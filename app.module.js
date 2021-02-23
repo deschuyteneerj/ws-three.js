@@ -126,13 +126,7 @@ let init = () => {
         } else {
             setTimeout(stopDice, 3000);
         }
-
-        
     })
-
-
-    
-
 }
 
 export{init};
