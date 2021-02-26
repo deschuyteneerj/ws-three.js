@@ -18,4 +18,4 @@ Three.js is a powerful tool that makes use of WebGL to render 3D computer animat
 
 ## Sources
 
-(threejs.org)[https://threejs.org/]
+[threejs.org](https://threejs.org/)
