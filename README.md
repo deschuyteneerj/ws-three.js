@@ -4,7 +4,7 @@
 
 In this workshop, we have learned how to install and use three.js in about 3 hours ! 
 
-Three.js is a powerful tool that makes use of WebGL to render 3D computer animations in HTML canvas and without much efforts. The source code can be found (here)[https://github.com/mrdoob/three.js/].
+Three.js is a powerful tool that makes use of WebGL to render 3D computer animations in HTML canvas and without much efforts. The source code can be found [here](https://github.com/mrdoob/three.js/).
 
 You can see the result of our workshop by clicking on 
 
@@ -56,6 +56,7 @@ How did we do this in 3 hours ?!
 
 ## Sources
 
+<<<<<<< HEAD
 * (threejs.org)[https://threejs.org/] - Official website, and the documentation.
 
 * (threejsfundamentals)[https://threejsfundamentals.org/threejs/lessons/threejs-fundamentals.html] - Really nice tutorials about three.js.
@@ -76,3 +77,6 @@ How did we do this in 3 hours ?!
 * Jonathan Deschuyteneer => (Github)[https://github.com/deschuyteneerj/] - (Linkedin)[https://www.linkedin.com/in/jonathan-deschuyteneer/] - (CV)[https://deschuyteneerj.github.io/Mon-CV/] 
 
 * Olivia Fantinel => (Github)[https://github.com/tanoshiibot] - (Linkedin)[https://www.linkedin.com/in/olivia-fantinel/]
+=======
+[threejs.org](https://threejs.org/)
+>>>>>>> 03a158ec710c47a24ee60c67f1537f5acfba47e8
