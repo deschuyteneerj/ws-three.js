@@ -7,7 +7,6 @@ let init = () => {
 
     
     let canvas = document.createElement('canvas');
-    canvas.setAttribute("id", "render");
 
     const scene = new THREE.Scene();
     
@@ -62,7 +61,7 @@ let init = () => {
 
         renderer.render( scene, camera );
 
-        if (!stop) {requestAnimationFrame(animate)};
+        if (!stop) {window.requestAnimationFrame(animate)};
     };
 
     function rollDice() {
