@@ -6,8 +6,6 @@ In this workshop, we have learned how to install and use three.js in about 3 hou
 
 Three.js is a powerful tool that makes use of WebGL to render 3D computer animations in HTML canvas and without much efforts. The source code can be found [here](https://github.com/mrdoob/three.js/).
 
-You can see the result of our workshop by clicking [here](http://tanoshiibot.me/ws-three.js/).
-
 
 ## How to install and use three.js on my web page ?
 
